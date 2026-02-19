@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Espacio Gamer</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+  font-size:16px;
+  --azul-principal:#1f3c88;
+  --azul-suave:#e8f0fe;
+  --amarillo:#f4b400;
+  --gris-claro:#f5f7fa;
+}
+
+body{
+  margin:0;
+  font-family:'Source Sans 3', sans-serif;
+  background:white;
+  color:#333;
+  line-height:1.6;
+}
+
+/*grid*/
+.contenedor{
+  display:grid;
+  grid-template-areas:
+    "cabecera cabecera"
+    "principal lateral"
+    "pie pie";
+  grid-template-columns:3fr 1fr;
+  gap:2rem;
+  padding:0 6%;
+}
+
+/*header*/
+header{
+  grid-area:cabecera;
+  padding:2rem 6%;
+  border-bottom:3px solid var(--amarillo);
+  background:var(--azul-suave);
+}
+
+header h1{
+  margin:0;
+  font-family:'Libre Baskerville', serif;
+  font-size:2.2rem;
+  color:var(--azul-principal);
+}
+
+/*nav flexbox*/
+nav{
+  margin-top:1rem;
+  display:flex;
+  gap:1.5rem;
+}
+
+nav a{
+  text-decoration:none;
+  color:var(--azul-principal);
+  font-weight:600;
+}
+
+nav a:hover{
+  color:var(--amarillo);
+}
+
+/*main*/
+main{
+  grid-area:principal;
+}
+
+/*portada*/
+.portada{
+  background:var(--azul-principal);
+  color:white;
+  padding:2rem;
+  border-radius:10px;
+  margin-bottom:2rem;
+}
+
+.portada h2{
+  margin-top:0;
+  font-family:'Libre Baskerville', serif;
+}
+
+/*indice*/
+.indice{
+  background:var(--gris-claro);
+  padding:1.5rem;
+  border-left:4px solid var(--amarillo);
+  margin-bottom:2rem;
+}
+
+.indice ul{
+  padding-left:1.2rem;
+}
+
+/*articulos*/
+article{
+  background:white;
+  padding:1.8rem;
+  margin-bottom:2rem;
+  border-radius:10px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.06);
+}
+
+article h2{
+  font-family:'Libre Baskerville', serif;
+  color:var(--azul-principal);
+}
+
+time{
+  font-size:0.85rem;
+  color:#777;
+}
+
+/*galeria con flexbox*/
+.galeria{
+  display:flex;
+  flex-wrap:wrap;
+  gap:1rem;
+}
+
+figure{
+  flex:1 1 30%;
+  margin:0;
+}
+
+figure img{
+  width:100%;
+  border-radius:8px;
+}
+
+figcaption{
+  text-align:center;
+  font-size:0.85rem;
+  margin-top:0.5rem;
+}
+
+/*sidebar*/
+aside{
+  grid-area:lateral;
+  background:var(--gris-claro);
+  padding:1.8rem;
+  border-radius:10px;
+  height:fit-content;
+}
+
+aside h3{
+  margin-top:0;
+  color:var(--azul-principal);
+}
+
+/*footer*/
+footer{
+  grid-area:pie;
+  margin-top:2rem;
+  padding:2rem 6%;
+  background:var(--azul-suave);
+  border-top:3px solid var(--amarillo);
+  display:flex;
+  justify-content:flex-end;
+}
+
+footer > div{
+  max-width:400px;
+  width:100%;
+}
+
+/*formulario de abajo*/
+form{
+  display:flex;
+  flex-direction:column;
+  gap:0.8rem;
+}
+
+input[type="email"]{
+  padding:0.7rem;
+  border-radius:6px;
+  border:1px solid #ccc;
+  font-size:1rem;
+}
+
+input[type="submit"]{
+  padding:0.7rem;
+  border:none;
+  border-radius:6px;
+  background:linear-gradient(to right,var(--azul-principal),var(--amarillo));
+  color:white;
+  font-weight:600;
+  cursor:pointer;
+}
+
+input[type="submit"]:hover{
+  opacity:0.9;
+}
+
+/*media query, para que la pagina sea adaptable a pantallas pequeñas*/
+@media(max-width:800px){
+  .contenedor{
+    grid-template-areas:
+      "cabecera"
+      "principal"
+      "lateral"
+      "pie";
+    grid-template-columns:1fr;
+  }
+
+  footer{
+    justify-content:center;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="contenedor">
+
+<header>
+  <h1>Espacio Gamer</h1>
+  <nav>
+    <a href="#">Inicio</a>
+    <a href="#">Artículos</a>
+    <a href="#">Galería</a>
+    <a href="#">Contacto</a>
+  </nav>
+</header>
+
+<main>
+
+<section class="portada">
+  <h2>Edición Gamer: Cultura y Tecnología en el Gaming</h2>
+  <p>Avances de la industria gamer y el impacto social de los juegos en línea.</p>
+</section>
+
+<section class="indice">
+  <h3>Índice</h3>
+  <ul>
+    <li>1. La evolución del gaming competitivo</li>
+    <li>2. Gráficos realistas y motores de nueva generación</li>
+    <li>3. El impacto del juego en línea en la comunidad gamer</li>
+  </ul>
+</section>
+
+<article>
+  <h2>La evolución del gaming competitivo</h2>
+  <time datetime="2026-02-17">17 febrero 2026</time>
+  <p>Los esports han pasado de ser torneos locales a eventos internacionales con audiencias millonarias. Equipos profesionales, entrenamientos estructurados y patrocinadores globales han convertido el gaming competitivo en una industria consolidada.</p>
+</article>
+
+<article>
+  <h2>Gráficos realistas y motores de nueva generación</h2>
+  <time datetime="2026-02-14">14 febrero 2026</time>
+  <p>Los motores gráficos actuales permiten entornos más detallados, iluminación dinámica y físicas avanzadas. Esto no solo mejora la experiencia visual, sino que también amplía las posibilidades narrativas dentro de los videojuegos modernos.</p>
+</article>
+
+<article>
+  <h2>El impacto del juego en línea en la comunidad gamer</h2>
+  <time datetime="2026-02-10">10 febrero 2026</time>
+  <p>El juego en línea ha transformado la forma en que los jugadores interactúan. Las comunidades virtuales, los clanes y las plataformas de streaming han creado espacios donde la colaboración y la competencia conviven en tiempo real.</p>
+</article>
+
+<section>
+  <h2>Galería</h2>
+  <div class="galeria">
+    <figure>
+      <img src="https://fastly.picsum.photos/id/96/4752/3168.jpg?hmac=KNXudB1q84CHl2opIFEY4ph12da5JD5GzKzH5SeuRVM" alt="">
+      <figcaption>Competencias de esports</figcaption>
+    </figure>
+    <figure>
+      <img src="https://fastly.picsum.photos/id/48/5000/3333.jpg?hmac=y3_1VDNbhii0vM_FN6wxMlvK27vFefflbUSH06z98so" alt="">
+      <figcaption>Gráficos de última generación</figcaption>
+    </figure>
+    <figure>
+      <img src="https://fastly.picsum.photos/id/283/3823/2538.jpg?hmac=a_UsYMvJaoPttj7INb2UOcCbMuKb9cEu70ZgzcwCDqs" alt="">
+      <figcaption>Comunidades online</figcaption>
+    </figure>
+  </div>
+</section>
+
+</main>
+
+<aside>
+  <h3>Sobre el autor</h3>
+  <p>Hola, soy el creador y la verdad no se como hice esto jaja ayuda(bait).</p>
+  <ul>
+    <li><a href="#">RedSocialCualquiera</a></li>
+    <li><a href="#">RedSocialCualquieraAgain</a></li>
+  </ul>
+</aside>
+
+<footer>
+  <div>
+    <h3>Suscripción al Newsletter</h3>
+    <form>
+      <input type="email" placeholder="Ingresa tu correo electrónico" required>
+      <label>
+        <input type="checkbox" required>
+        Acepto recibir novedades
+      </label>
+      <input type="submit" value="Suscribirme">
+    </form>
+  </div>
+</footer>
+
+</div>
+
+</body>
+</html>
